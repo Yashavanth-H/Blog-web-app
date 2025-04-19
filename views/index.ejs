@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest stories</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div id="icon"><img id="h_img" src="/images/blog.gif">
+<img id="main_name" src="/images/header.webp" alt="">    </div>
+        <nav>
+          <a href="#">Stories</a>
+          <a href="#">Members</a>
+          <a href="#">Write</a>
+        </nav>
+      </header>
+
+      <main class="container">
+        <h2>Latest stories</h2>
+        <% stories.forEach(story => {%>
+            <div class="story-card">
+              <div class="story-info">
+                <p class="meta"><%= story.category %> - <%= story.date %></p>
+                <h3><% story.title %></h3>
+                <p class="desc"><%= story.desc %></p>
+                <button>Read more</button>
+              </div>
+              <div class="story-image">
+                <img src="<%= story.image %>" alt="Story Image">
+              </div>
+            </div>
+          <% }); %>
+      </main>
+</body>
+</html>
